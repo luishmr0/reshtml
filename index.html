@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<?php
+  $bg = array('bg.jpg', 'bg-2.jpg', 'bg-3.jpg', 'bg-4.jpg','bg-5.jpg','bg-6.jpg','bg-7.jpeg','bg-8.jpg','bg-9.jpg','bg-15.jpg','cover.jpg'); // array of filenames
+
+  $i = rand(0, count($bg)-1); // generate random number size of the array
+  $selectedBg = "$bg[$i]"; // set variable equal to which random filename was chosen
+?>
+<html lang="es">
+
+<head>
+    <title>luis_hmr0</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.0/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Signika+Negative' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'> 
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Sitio personal de Luis Homero Marin Rios">
+    <meta name="keywords" content="geek, blog, luis marin, peru, upao, software">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>    
+</head>
+<style>.modal{position:fixed;right:o;top:10px;}.modal-header,.btn-custom{background:#A98027;color:#FFFFFF;}.modal-body{background:#372D2D;}.popover{background-color:#372D2D;color:#ecf0f1;width:120px;}.popover.right .arrow:after{border-right-color:#e74c3c;}.input-group[class*=col-]{padding-right:15px;padding-left:15px;}.popover.top > .arrow:after{bottom:1px;margin-left:-10px;content:" ";border-top-color:#a94442;border-bottom-width:0;}.popover.top{width:150px;}.cover{background:url(images/<?php echo $selectedBg; ?>);background-size:cover;background-attachment:fixed;background-repeat:no-repeat;background-position:center;align-items:center;display:flex;height:100vh;justify-content:center}</style>
+
+<body>
+
+    <section>
+    <div class="cover">
+        <div class="content">           
+            <img src="images/darth.png" width="155" height="153" >            
+            <h1>luis_hmr0</h1>
+            <a href="#bout", class="icon fa fa-desktop"></a>
+              <div class="relleno"></div>
+        </div> 
+    </div>
+
+    </section>    
+    <section id="bout">    
+    <div style="background-image: url('images/bg.jpg')">
+        <div  class="header">
+          <div class="header-center">
+            <div class="content">         
+                     <h1>I AM YOUR FATHER</h1>
+             </div> 
+           </div>
+        </div> 
+   </div> 
+   </section> 
+
+    <section class="about">                 
+        <div class="boxes">
+              <img src="images/darth.jpg" class="about-avatar">
+           <h2>soy vader! (?) <i class="fa fa-android"></i></h2>
+            <p>peruvian, software engineering student, football, bookworm, gamer, movies;</p>
+            <a href="http://www.hotslogs.com/Player/Profile?PlayerID=2484740"  target="_blank"><img class="fa" src="http://www.johnpaua.com/image/Heroes1.png" width="40" height="40" >
+            <br>
+             <a href="http://www.imdb.com/list/ls071924674/" target="_blank"><i class="fa fa-film fa-2x"></i></a> 
+            <a href="https://github.com/luishmr0"  target="_blank"><i class="fa fa-github fa-2x"></i></a>
+            <a href="https://twitter.com/luis_hmr0"  target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+            <a href="https://www.facebook.com/"  target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>            
+         </div>   
+    </section>
+
+
+    <section class="info">      
+            <h2>mándame un e-mail</h2>
+
+            <p>en plena época digital donde todo son las redes sociales aún hay gente que usa el correo</p>
+             <a role="button" class="btn btn-custom" data-toggle="modal" data-target="#contacto"><i class="fa fa-envelope-o fa-2x"></i></a>
+            
+    <div id="contacto" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="contacto" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Contacto</h4>
+        </div>
+      <div class="modal-body">
+            <form class="form-horizontal" id="contactform" name="commentform" method="post" action="sendmail.php">
+                <div class="form-group">                   
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Nombre"/>
+                 </div>               
+                <div class="form-group">                   
+            <input type="email" class="form-control" id="email" name="email" placeholder="e-mail"/>                
+                </div>
+                <div class="form-group">                   
+                        <textarea rows="4" class="form-control" id="comments" name="comments" placeholder="Escriba su mensaje acá"></textarea>               
+                </div>
+                <div class="form-group" style="text-align: center">                    
+                        <button type="submit" value="Submit" class="btn btn-custom" id="send_btn">Enviar</button>                    
+                </div>
+            </form>
+        </div>
+        </div><!-- End of Modal content -->
+        </div><!-- End of Modal dialog -->
+    </div><!-- End of Modal -->
+    </section>
+    <footer>
+        <div class="center" style="text-align: center">
+            <p>&COPY; 2016 lhmr0</p>
+       </div>
+        
+    </footer>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>  
+       <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.0/js/bootstrap.min.js"></script>
+       <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.js"></script>
+        <script>
+$("#contactform").bootstrapValidator({container:"popover",message:"This value is not valid",feedbackIcons:{valid:"glyphicon glyphicon-ok",invalid:"glyphicon glyphicon-remove",validating:"glyphicon glyphicon-refresh"},fields:{name:{validators:{notEmpty:{message:"You're required to fill in a first name!"},regexp:{regexp:/^[A-Za-z\s.'-]+$/,message:"Alphabetical characters, hyphens and spaces"}}},email:{validators:{notEmpty:{message:"An email address is mandatory."},emailAddress:{message:"This is not a valid email address"}}},comments:{validators:{notEmpty:{message:"Are you sure? No comment?"}}}}}),$("#myModal").on("shown.bs.modal",function(){$("#contactform").bootstrapValidator("resetForm",!0)});
+    </script>
+    </body>
+</html>
