@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 <?php
-  $bg = array('bg.jpg', 'bg-2.jpg', 'bg-3.jpg', 'bg-4.jpg','bg-5.jpg','bg-6.jpg','bg-7.jpeg','bg-8.jpg','bg-9.jpg','bg-15.jpg','cover.jpg'); // array of filenames
+  $bg = array('bg.jpg', 'bg-2.jpg', 'bg-3.jpg', 'bg-4.jpg','bg-5.jpg','bg-6.jpg','bg-7.jpeg','bg-8.jpg','bg-9.jpg','bg-15.jpg'); // array of filenames
 
-  $i = rand(0, count($bg)-1); // generate random number size of the array
-  $selectedBg = "$bg[$i]"; // set variable equal to which random filename was chosen
+  $i = rand(0, count($bg)-1); 
+  $selectedBg = "$bg[$i]"; 
 ?>
 <html lang="es">
 
@@ -28,7 +28,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>    
 </head>
 <style>.modal{position:fixed;right:o;top:10px;}.modal-header,.btn-custom{background:#A98027;color:#FFFFFF;}.modal-body{background:#372D2D;}.popover{background-color:#372D2D;color:#ecf0f1;width:120px;}.popover.right .arrow:after{border-right-color:#e74c3c;}.input-group[class*=col-]{padding-right:15px;padding-left:15px;}.popover.top > .arrow:after{bottom:1px;margin-left:-10px;content:" ";border-top-color:#a94442;border-bottom-width:0;}.popover.top{width:150px;}.cover{background:url(images/<?php echo $selectedBg; ?>);background-size:cover;background-attachment:fixed;background-repeat:no-repeat;background-position:center;align-items:center;display:flex;height:100vh;justify-content:center}</style>
-
 <body>
 
     <section>
