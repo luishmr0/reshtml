@@ -1,11 +1,5 @@
 
 <!DOCTYPE html>
-<?php
-  $bg = array('bg.jpg', 'bg-2.jpg', 'bg-3.jpg', 'bg-4.jpg','bg-5.jpg','bg-6.jpg','bg-7.jpeg','bg-8.jpg','bg-9.jpg','bg-15.jpg'); // array of filenames
-
-  $i = rand(0, count($bg)-1); 
-  $selectedBg = "$bg[$i]"; 
-?>
 <html lang="es">
 
 <head>
@@ -25,7 +19,20 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="description" content="Sitio personal de Luis Homero Marin Rios">
     <meta name="keywords" content="geek, blog, luis marin, peru, upao, software">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+<script>
+  function myFunction() {
+  var images=['images/bg.jpg',
+            'images/bg-2.jpg',
+            'images/bg-3.jpg',
+            'images/bg-4.jpg',
+            'images/bg-5.jpg',
+            'images/bg-6.jpg',];
+var randomNumber = Math.floor(Math.random() * 9);
+var bgImg = 'url(' + images[randomNumber] + ')';
+document.getElementById("cover").style.backgroundImage = bgImg;
+}
+</script> 
 </head>
 <style>.modal{position:fixed;right:o;top:10px;}.modal-header,.btn-custom{background:#A98027;color:#FFFFFF;}.modal-body{background:#372D2D;}.popover{background-color:#372D2D;color:#ecf0f1;width:120px;}.popover.right .arrow:after{border-right-color:#e74c3c;}.input-group[class*=col-]{padding-right:15px;padding-left:15px;}.popover.top > .arrow:after{bottom:1px;margin-left:-10px;content:" ";border-top-color:#a94442;border-bottom-width:0;}.popover.top{width:150px;}.cover{background:url(images/<?php echo $selectedBg; ?>);background-size:cover;background-attachment:fixed;background-repeat:no-repeat;background-position:center;align-items:center;display:flex;height:100vh;justify-content:center}</style>
 <body>
@@ -34,7 +41,7 @@
     <div class="cover">
         <div class="content">           
             <img src="images/darth.png" width="155" height="153" >            
-            <h1>luis_hmr0</h1>
+            <h1 onclick="myFunction()">luis_hmr0</h1>
             <a href="#bout", class="icon fa fa-desktop"></a>
               <div class="relleno"></div>
         </div> 
